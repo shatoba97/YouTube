@@ -1,31 +1,23 @@
+</html>
+<!doctype html>
 <html>
 
 <head>
-    <title>YouTube APIs - Sample JS Page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/videolist.css">
-    <script src="./js/main.js"></script>
-
+    <title>Search</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=onClientLoad"></script>
 </head>
 
 <body>
-    <form action="/list" method="GET">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 ">
-                <div class="input-group">
+    <div id="buttons">
+        <label> <input id="query"  type="text"/><button id="search-button" onclick="search()">Search</button></label>
+    </div>
+    <div id="search-container">
+    </div>
 
-                    <input name="search" type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                        <button class="btn btn-secondary" type="submit">Go!</button>
-                    </span>
 
-                </div>
-            </div>
-        </div>
-    </form>
 </body>
 
 </html>

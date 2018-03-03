@@ -7,7 +7,7 @@ module.exports = function(app) {
         console.log(ListVideos);
 
         res.sendfile('./public/html/videoList.html');
-        //require("../../js/main.js")(ListVideos);
+        module.exports.lestvideo = ListVideos;
     });
 
     app.get('/watch', (req, res) => {

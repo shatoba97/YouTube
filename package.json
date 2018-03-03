@@ -9,11 +9,14 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@types/gapi.client.youtube": "^3.0.0",
         "body-parser": "^1.18.2",
         "ejs": "^2.5.7",
         "express": "^4.16.2",
         "mongodb": "^2.2.34",
-        "path": "^0.12.7"
+        "path": "^0.12.7",
+        "tpl": "^0.3.0",
+        "youtube-video-api": "^0.3.7"
     },
     "devDependencies": {
         "nodemon": "^1.14.11"
