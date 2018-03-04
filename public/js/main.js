@@ -7,10 +7,9 @@ function showResponse(response) {
     $("#search-container").innerHTML = '';
     $.each(results.items, function(index, item) {
         $.get("../html/item.html", function(data) {
-            $("#search-container").append(tplawesome(data, [{ "title": item.snippet.title, "videoid": item.id.videoId }]));
+            $("#search-container").append(tplawesome(data, [{ "title": item.snippet.title, "width": 300, "height": 198, "videoid": item.id.videoId, "src": item.id.videoId + "/mqdefault.jpg" }]));
         });
     });
-    resetVideoHeight();
     $(window).on("resize", resetVideoHeight);
 };
 
@@ -32,16 +31,17 @@ function searchPreviousPage() {
     var request = gapi.client.youtube.search.list({
         part: 'snippet',
         q: url,
-        maxResult: 10
+        maxResult: 20
     });
     request.execute(onSearchResponse);
 }
 
 function search() {
+    window.location.search = "?search=" + $("#query").val();
     var request = gapi.client.youtube.search.list({
         part: 'snippet',
         q: $("#query").val(),
-        maxResult: 10
+        maxResult: 20
     });
     request.execute(onSearchResponse);
 }
