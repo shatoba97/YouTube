@@ -12,6 +12,7 @@
         "@types/gapi.client.youtube": "^3.0.0",
         "body-parser": "^1.18.2",
         "ejs": "^2.5.7",
+        "export": "^0.1.337",
         "express": "^4.16.2",
         "mongodb": "^2.2.34",
         "path": "^0.12.7",

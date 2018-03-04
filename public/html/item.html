@@ -1,4 +1,16 @@
-<div class="item">
-    <h2>{{title}}</h2>
-    <iframe class="video w100" width="640" height="360" src="//www.youtube.com/embed/{{videoid}}" frameborder="0" allowfullscreen></iframe>
-</div>
+<form action="/watch" method="GET">
+    <!-- <div class="item">
+        <h2>{{title}}</h2>
+        <iframe class="video w100" width="640" height="360" src="//www.youtube.com/embed/{{videoid}}" frameborder="0" allowfullscreen></iframe>
+    </div> -->
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <h5>{{title}}</h5>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <a aria-hidden="true" href="/watch?v={{videoid}}">
+                <img alt="" width="246" height="138" src="https://i.ytimg.com/vi/{{videoid}}/mqdefault.jpg" data-ytimg="1">
+            </a>
+        </div>
+    </div>
+</form>

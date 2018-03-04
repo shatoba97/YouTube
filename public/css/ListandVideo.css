@@ -1,0 +1,22 @@
+div[class="row search"] {
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    right: 20%;
+    width: 100%;
+}
+
+@media screen and (max-width:575px) {
+    div[class="row search"] {
+        width: 350px;
+        position: absolute;
+        top: 40%;
+        left: 30%;
+        right: 20%;
+    }
+}
+
+#search-container {
+    margin-top: 35%;
+    margin-left: 15%;
+}
