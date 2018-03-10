@@ -17,7 +17,8 @@ class Youtube extends React.Component {
         super(props);
         this.state={
             resultyt:[],
-            val:''
+            val:'',
+            frame:[]
         };
         this.clicked=this.clicked.bind(this);
         this.onChangeHandler=this.onChangeHandler.bind(this);
@@ -36,27 +37,24 @@ class Youtube extends React.Component {
         .then((responseJson)=>{
             const resultyt=responseJson.items.map((obj)=>"https://www.youtube.com/embed/"+obj.id.videoId);
             console.log(resultyt);
+            var frame=resultyt.map((link, i)=> {
+                console.log(link);
+                return( <div key={i} className="youtube"><iframe  width="560" height="315" src={link} frameBorder="0" allowFullScreen></iframe></div>);
+                 
+                });
+            this.setState({frame:frame});
         });
-        
+        console.log(this.state.frame);
         
     }
     render(){
 
         return(
-            <div className="input-group">
+           <div className="input-group">
                 <input type="text" name="search" className="form-control" onChange={this.onChangeHandler} placeholder="Search for..." />
                 <span className="input-group-btn">
-                console.log(this.state.resultyt)
-                    <button className="btn btn-secondary"  onClick={this.clicked}>Go!</button>
-                    {
-                        
-                        this.state.resultyt.map((link,i)=>{
-                            {console.log("link="+link+"i="+i)}
-                            var frame = <div key={i} className="youtube"><iframe  width="560" height="315" src={link} frameBorder="0" allowFullScreen></iframe></div>
-                            return frame;
-                        })
-                    }
-                    {this.frame}
+                    <button className="btn btn-secondary"  onClick={this.clicked}> Go! </button>
+                    {this.state.frame}
                 </span>
                 
             </div>
