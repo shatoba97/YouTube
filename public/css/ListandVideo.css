@@ -2,6 +2,14 @@ body {
     background-color: #f1f1f1;
 }
 
+#root {
+    position: absolute;
+    top: 7%;
+    left: 30%;
+    right: 20%;
+    height: 100px;
+}
+
 div[class="row search"] {
     position: absolute;
     top: 7%;
@@ -24,6 +32,7 @@ div[class="row search"] {
     margin-top: 165px;
     margin-left: 15%;
     margin-right: 10%;
+    min-width: 660px;
 }
 
 #label {

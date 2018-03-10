@@ -26,3 +26,12 @@ function loadAPIClientInterfaces() {
         handleAPILoaded();
     });
 }
+    // Called automatically when JavaScript client library is loaded.
+    function onClientLoad() {
+        gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
+    }
+    
+    function onYouTubeApiLoad() {
+        gapi.client.setApiKey('AIzaSyBTtNgEk-54vL6FOQ0bENBxakO-8SS7ClI');
+        
+    }
