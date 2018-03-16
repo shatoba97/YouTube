@@ -3,9 +3,13 @@ import ReactDOM from "react-dom";
 class VideoDetail extends React.Component {
     constructor(props) {
       super(props);
+     
       this.init();
-      this.video = '' //video id
-  
+      this.video = decodeURIComponent(window.location).replace("http://localhost:8080/watch/","")
+      this.state={
+        author:'',
+        title:''
+      }
       window['onYouTubeIframeAPIReady'] = (e) => {
         this.YT = window['YT'];
         this.reframed = false;
@@ -15,15 +19,18 @@ class VideoDetail extends React.Component {
             'onStateChange': this.onPlayerStateChange.bind(this),
             'onError': this.onPlayerError.bind(this),
             'onReady': (e) => {
-              if (!this.reframed) {
-                this.reframed = true;
-                reframe(e.target.a);
-              }
+              
+                this.setState({author: this.player.j.videoData.author,
+                  title:this.player.j.videoData.title});
+                
+              
             }
           }
         });
+        console.log(this.player);
       };
     }
+    
     render() {
       const style = `.max-width-1024 { max-width: 1024px; margin: 0 auto; }`;
       return( 
@@ -32,6 +39,12 @@ class VideoDetail extends React.Component {
         <div className="max-width-1024">
         <div className="embed-responsive embed-responsive-16by9" id="player">
         </div>
+      </div>
+      <div>
+        {this.state.author}
+      </div>
+      <div>
+        {this.state.title}
       </div>
         </div>
       );
@@ -64,9 +77,7 @@ class VideoDetail extends React.Component {
       };
     };
     //utility
-    cleanTime() {
-      return Math.round(this.player.getCurrentTime())
-    };
+    
     onPlayerError(event) {
       switch (event.data) {
         case 2:
@@ -80,5 +91,5 @@ class VideoDetail extends React.Component {
     };
   }
   
-  ReactDOM.render(<MyAppComponent />, document.getElementById('app'));
+  
 export default VideoDetail;

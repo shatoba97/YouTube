@@ -8,7 +8,9 @@ import {
   Link
 } from 'react-router-dom'
 
-import Index from "./public/js/index";
+import SearchBar from "./public/js/index";
+import VideoList from "./public/js/videoList";
+import VideoDetail from "./public/js/videoDetail";
 
 const Home = () => (
   <div>
@@ -62,17 +64,9 @@ const Topics = ({ match }) => (
 ReactDOM.render((
   <Router>
     <div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/abou">About</Link></li>
-        <li><Link to="/topics">Topics</Link></li>
-      </ul>
-
-      <hr/>
-
-      <Route exact path="/" component={Index}/>
-      <Route path="/about" component={About}/>
-      <Route path="/topics" component={Topics}/>
+      <Route exact path="/" component={SearchBar}/>
+      <Route path="/list/" component={VideoList}/>
+      <Route path="/watch/" component={VideoDetail}/>
     </div>
   </Router>
 ), document.getElementById('root'))
