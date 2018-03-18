@@ -1,0 +1,45 @@
+body {
+    background-color: #f1f1f1;
+}
+#ytplayer{
+    position: absolute;
+    margin-top: 150px;
+    margin-right: 15%;
+    margin-left: 5%;
+    min-width: 660px;
+}
+
+img{
+    width: 240px;
+    height: 180px;
+}
+
+.description {
+    color: black;
+}
+
+h5 {
+    color: #3b7ec6;
+    text-align: left;
+}
+
+
+
+.wraper {
+    display: grid;
+    grid-auto-rows: minmax(50px, auto);
+    grid-gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 940px;
+    padding: 10px;
+}
+
+.title {
+    grid-column: 2 / 4;
+    grid-row: 1/2;
+}
+
+.video {
+    grid-column: 1 / 2;
+    grid-row: 1/2;
+}
